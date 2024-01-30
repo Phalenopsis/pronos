@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Puissance 4²{% endblock %}
+
+{% block body %}
+    {% if is_granted('ROLE_USER') %}
+    <h1>{{ user.username }}</h1>
+    {% endif %}
+<main>
+
+</main>
+{% endblock %}
