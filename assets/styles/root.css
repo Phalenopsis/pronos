@@ -1,0 +1,13 @@
+:root {
+    /* sizes */
+    --navbar-heigth: 5rem;
+    --svg-padding: 0.5rem;
+    --svg-height: calc(var(--navbar-heigth) - calc(var(--svg-padding) * 2));
+    --main-height: calc(100svh - var(--navbar-heigth));
+    --font-size: 1rem;
+
+    /* colors */
+    --bg-color: black;
+    --font-color: #00ffb2;
+    --gradient-shadow: radial-gradient(circle, rgba(0, 0, 255) 0%, rgba(255, 255, 0) 50%, rgba(255,0,0,1) 100%);
+}
