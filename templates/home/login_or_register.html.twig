@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Puissance 4²{% endblock %}
+
+{% block body %}
+    <main class="column">
+        <a href="{{ path('app_login') }}" class="a-none"><div class="frame shadow">
+                <p class='trans-text'>Login</p>
+            </div>
+        </a>
+        <a href="{{ path('app_register') }}" class="a-none">
+            <div class="frame shadow">
+                <p class='trans-text'>Register</p>
+            </div>
+        </a>
+    </main>
+{% endblock %}
