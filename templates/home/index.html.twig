@@ -3,10 +3,46 @@
 {% block title %}Puissance 4²{% endblock %}
 
 {% block body %}
-    {% if is_granted('ROLE_USER') %}
-    <h1>{{ user.username }}</h1>
-    {% endif %}
-<main>
+    {#    {% if is_granted('ROLE_USER') %}#}
+    {#    <h1>{{ user.username }}</h1>#}
+    {#    {% endif %}#}
+    <main class="column">
+        <div class="none">
+            {{ include('components/_clip_user.html.twig') }}
+            {{ include('components/_clip_ia.html.twig') }}
+        </div>
+        <div class="frame shadow frame-home"><span class="trans-text">X<sup>4</sup></span></div>
+        <a  class="a-none">
+            <div class="frame shadow frame-home">
+                <span class="trans-svg user r-spaced"></span>
+                <span class="trans-text">
+                    vs
+                </span>
+                <span class="trans-svg user spaced"></span>
+            </div>
+        </a>
+        <a href="{{ path('app_choose_diff_1p') }}" class="a-none">
+            <div class="frame shadow frame-home">
+                <span class="trans-svg user r-spaced"></span>
+                <span class="trans-text">
+                    vs
+                </span>
+                <span class="trans-svg ia spaced"></span>
+            </div>
+        </a>
+        <a class="a-none">
+        <div class="frame shadow frame-home">
+            <span class="trans-svg ia r-spaced"></span>
+            <span class="trans-text">
+            vs
+            </span>
+            <span class="trans-svg ia spaced"></span>
+        </div>
+        </a>
+        <a class="a-none">
+        <div class="frame shadow frame-home"><span class="trans-text">Hall Of Fame</span></div>
 
-</main>
+        </a>
+
+    </main>
 {% endblock %}
