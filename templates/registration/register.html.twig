@@ -3,17 +3,34 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+    <main>
     <h1>Register</h1>
 
-    {{ form_errors(registrationForm) }}
+{#    {{ form_errors(registrationForm) }}#}
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+{#        {{ form_row(registrationForm.username) }}#}
+        <label for="username">{{ field_label(registrationForm.username) }}</label>
+        <input id="username" type="text" name="{{ field_name(registrationForm.username) }}">
+        <span class="error">{{ form_errors(registrationForm.username) }}</span>
+{#        {{ form_row(registrationForm.plainPassword, {#}
+{#            label: 'Password'#}
+{#        }) }}#}
+        <label for="password">Password</label>
+        <input id="password" type="password" name="{{ field_name(registrationForm.plainPassword) }}">
+        <span class="error">{{ form_errors(registrationForm.plainPassword) }}</span>
+{#
+{{ form_row(registrationForm.agreeTerms) }}#}
+        <div class="remember-me">
+            <label class="switch">
+                <input type="checkbox" name="{{ field_name(registrationForm.agreeTerms) }}">
+                <span class="slider round"></span>
+            </label>
+            <div>{{ field_label(registrationForm.agreeTerms) }}</div>
+        </div>
+        <span class="error">{{ form_errors(registrationForm.agreeTerms) }}</span>
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+    </main>
 {% endblock %}
