@@ -1,0 +1,36 @@
+form {
+    --form-font-size: calc(var(--font-size) * 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: var(--form-font-size);
+    margin: 5vw;
+    height: 60vh;
+    @media screen and (width > 576px) {
+        margin: 5vw 20vw;
+
+    }
+}
+
+input {
+    font-size: var(--form-font-size);
+    /*height: calc(var(--form-font-size) * 1.5);*/
+    margin-bottom: var(--svg-padding);
+    padding: 1rem ;
+}
+button {
+    font-size: var(--form-font-size);
+    height: calc(var(--form-font-size) * 1.5);
+}
+.error {
+    color: red;
+    font-size: 2rem;
+}
+
+/*.checkbox input[type=checkbox]{*/
+/*    width: var(--font-size);*/
+/*    height: var(--font-size);*/
+/*}*/
+/*.checkbox input[type=checkbox]:checked{*/
+/*    background-color: var(--font-color);*/
+/*}*/
