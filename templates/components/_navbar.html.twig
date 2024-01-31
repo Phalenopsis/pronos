@@ -1,7 +1,7 @@
 <header>
     <nav>
         <div>{% if is_granted('ROLE_USER') %}
-                {{ user.username }}
+                {{ app.user.username }}
             {% endif %}</div>
         <a href="
                 {% if is_granted('ROLE_USER') %}
