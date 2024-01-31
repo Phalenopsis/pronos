@@ -1,0 +1,74 @@
+.frame {
+    font-size: 50px;
+    font-weight: bold;
+    width: 80vw;
+    height: 20vh;
+}
+.shadow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(0deg, #000, #262626);
+}
+.trans-text{
+    background: var(--gradient-shadow);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-size: calc(400px * 4) calc(250px * 4);
+
+    animation: animatetext 10s linear infinite;
+}
+.trans-text:before,
+.trans-text:after,
+.shadow:before,
+.shadow:after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: var(--gradient-shadow);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: animatetext 10s linear infinite;
+}
+.shadow:after {
+    filter: blur(20px);
+}
+
+/*@keyframes animate {*/
+/*    0% {*/
+/*        background-position: 0 0;*/
+/*    }*/
+/*    50% {*/
+/*        background-position: 100% 0;*/
+/*    }*/
+/*    100% {*/
+/*        background-position: 0 0;*/
+/*    }*/
+/*}*/
+
+@keyframes animatetext {
+    0% {
+        background-position: 50% 50%;
+    }
+    20% {
+        background-position: 0% 100%;
+    }
+    40% {
+        background-position: 100% 0%;
+    }
+    60% {
+        background-position: 200% 100%;
+    }
+    80% {
+        background-position: 100% 200%;
+    }
+    100% {
+        background-position: 50% 50%;
+    }
+}
