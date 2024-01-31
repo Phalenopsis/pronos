@@ -7,7 +7,7 @@
                 {% if is_granted('ROLE_USER') %}
                     {{ path('app_logout') }}
                 {% else %}
-                    {{ path('app_login') }}
+                    {{ path('app_login_or_register') }}
                 {% endif %}
         ">
 
