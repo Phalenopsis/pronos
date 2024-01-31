@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Puissance 4²{% endblock %}
+
+{% block body %}
+    <div class="none">
+        {{ include('components/_clip_user.html.twig') }}
+        {{ include('components/_clip_ia.html.twig') }}
+    </div>
+    <main class="column">
+        <div class="none">
+
+        </div>
+{#        <div class="frame shadow frame-home"><span class="trans-text">X<sup>4</sup></span></div>#}
+        <a class="a-none">
+            <div class="frame shadow frame-home">
+
+                <span class="trans-text">
+                    Easy
+                    <span class="trans-svg ia spaced"></span>
+                </span>
+
+            </div>
+        </a>
+        <a class="a-none">
+            <div class="frame shadow frame-home">
+
+                <span class="trans-text">
+                    Medium
+                </span>
+                <span class="trans-svg ia spaced"></span>
+                <span class="trans-svg ia spaced"></span>
+            </div>
+        </a>
+        <a class="a-none">
+            <div class="frame shadow frame-home">
+
+                <span class="trans-text">
+                    Hard
+                </span>
+                <span class="trans-svg ia spaced"></span>
+                <span class="trans-svg ia spaced"></span>
+                <span class="trans-svg ia spaced"></span>
+            </div>
+        </a>
+{#        <a>#}
+{#            <div class="frame shadow frame-home"><span class="trans-text">Hall Of Fame</span></div>#}
+
+{#        </a>#}
+
+    </main>
+{% endblock %}
