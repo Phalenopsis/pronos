@@ -19,3 +19,6 @@ main.column {
 a.a-none {
     text-decoration: none;
 }
+.none {
+    position: absolute;
+}
