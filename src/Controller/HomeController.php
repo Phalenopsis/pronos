@@ -23,4 +23,10 @@ class HomeController extends AbstractController
     {
         return $this->render('home/login_or_register.html.twig');
     }
+
+    #[Route('/choosediff1p', name: 'app_choose_diff_1p')]
+    public function chooseDiff1P(): Response
+    {
+        return $this->render('home/choose_diff_1p.html.twig');
+    }
 }
