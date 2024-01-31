@@ -17,4 +17,10 @@ class HomeController extends AbstractController
             'user' => $user,
         ]);
     }
+
+    #[Route('/loginorregister', name: 'app_login_or_register')]
+    public function loginOrRegister(): Response
+    {
+        return $this->render('home/login_or_register.html.twig');
+    }
 }
