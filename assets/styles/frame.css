@@ -4,6 +4,16 @@
     width: 80vw;
     height: 20vh;
 }
+.frame-home {
+    font-size: 2rem;
+    font-weight: bold;
+    width:  60vw;
+    height: 4rem;
+}
+.frame-home svg {
+    width: 2rem;
+    height: 2rem;
+}
 .shadow {
     display: flex;
     justify-content: center;
@@ -20,6 +30,27 @@
     background-size: calc(400px * 4) calc(250px * 4);
 
     animation: animatetext 10s linear infinite;
+}
+.trans-svg {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: var(--gradient-shadow);
+    background-size: calc(400px * 4) calc(250px * 4);
+    animation: animatetext 10s linear infinite;
+    scale: 2;
+}
+.trans-svg.user {
+    clip-path: url(#svg-user);
+}
+.trans-svg.ia {
+    clip-path: url(#svg-ia);
+}
+.trans-svg.spaced {
+    margin-left: 2rem;
+}
+.trans-svg.r-spaced {
+    margin-right: 2rem;
 }
 .trans-text:before,
 .trans-text:after,
