@@ -3,7 +3,7 @@ header>nav {
     width: 100vw;
     background-color: var(--bg-color);
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     padding: var(--svg-padding);
     font-size: calc(var(--font-size) * 2);
 }
@@ -11,7 +11,7 @@ header>nav>div {
     align-self: flex-end;
 
 }
-header>nav>a>svg {
+header>nav svg {
     width: var(--svg-height);
     height: var(--svg-height);
     align-self: flex-end;
