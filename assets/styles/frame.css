@@ -12,13 +12,13 @@
 }
 .frame-team {
     width: 40vw;
-    height: 4rem;
+    min-height: 4rem;
     font-size: 1rem;
     margin: 1rem;
 }
 .frame-home svg {
     width: 2rem;
-    height: 2rem;
+    min-height: 2rem;
 }
 .shadow {
     display: flex;
