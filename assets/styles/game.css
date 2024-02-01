@@ -1,0 +1,9 @@
+.looser {
+    color: darkslategrey;
+}
+.winner {
+    color: var(--font-color);
+}
+.draw {
+    color: rgb(128, 128, 128);
+}
