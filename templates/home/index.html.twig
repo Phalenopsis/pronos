@@ -11,25 +11,28 @@
             {{ include('components/_clip_user.html.twig') }}
             {{ include('components/_clip_ia.html.twig') }}
         </div>
-        <div class="frame shadow frame-home"><span class="trans-text">X<sup>4</sup></span></div>
-        <a  class="a-none">
+        <div class="frame shadow frame-home"><span class="trans-text">Aaron's matches prediction</span></div>
+
+        {% if not is_granted('ROLE_USER') %}
+        <a href="{{ path('app_login_or_register') }}" class="a-none">
             <div class="frame shadow frame-home">
-                <span class="trans-svg user r-spaced"></span>
+
                 <span class="trans-text">
-                    vs
+                    Connect or Register
                 </span>
-                <span class="trans-svg user spaced"></span>
+
             </div>
         </a>
+        {% endif %}
+
         <a href="{{ path('app_choose_diff_1p') }}" class="a-none">
             <div class="frame shadow frame-home">
-                <span class="trans-svg user r-spaced"></span>
                 <span class="trans-text">
-                    vs
+                    View next matches
                 </span>
-                <span class="trans-svg ia spaced"></span>
             </div>
         </a>
+
         <a class="a-none">
         <div class="frame shadow frame-home">
             <span class="trans-svg ia r-spaced"></span>
@@ -39,10 +42,15 @@
             <span class="trans-svg ia spaced"></span>
         </div>
         </a>
-        <a class="a-none">
-        <div class="frame shadow frame-home"><span class="trans-text">Hall Of Fame</span></div>
 
-        </a>
+{#        IT WORKS !!!!#}
+
+{#        <a class="a-none">#}
+{#        <div class="frame shadow frame-home"#}
+{#             style="--gradient-shadow: radial-gradient(circle, rgba(255, 0, 255) 0%, rgba(0, 0, 0) 50%, rgba(255,0, 255,1) 100%);"#}
+{#        ><span class="trans-text">Hall Of Fame</span></div>#}
+
+{#        </a>#}
 
     </main>
 {% endblock %}
