@@ -20,12 +20,12 @@ class UserFixtures extends Fixture
         $admin = new User();
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setUsername("Admin");
-        $admin->setPassword($this->passwordHasher->hashPassword('ploplop'));
+        $admin->setPassword($this->passwordHasher->hashPassword($admin, 'ploplop'));
         $manager->persist($admin);
         $user = new User();
         $user->setRoles(['ROLE_USER']);
         $user->setUsername("user");
-        $user->setPassword($this->passwordHasher->hashPassword('ploplop'));
+        $user->setPassword($this->passwordHasher->hashPassword( $user, 'ploplop'));
         $manager->persist($user);
         // $product = new Product();
         // $manager->persist($product);
