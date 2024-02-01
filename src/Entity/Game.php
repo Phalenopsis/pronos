@@ -19,7 +19,7 @@ class Game
     #[ORM\ManyToOne(inversedBy: 'movegames')]
     private ?Team $team2 = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $result = null;
 
     public function getId(): ?int
