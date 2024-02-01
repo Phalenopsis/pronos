@@ -3,11 +3,18 @@
 {% block title %}Edit Game{% endblock %}
 
 {% block body %}
+    <main>
     <h1>Edit Game</h1>
+        <div class="game-title">
+            <div>{{ game.team1.name }}</div>
+            <div> - </div>
+            <div>{{ game.team2.name }}</div>
+        </div>
 
     {{ include('game_crud/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_game_crud_index') }}">back to list</a>
-
+<div class="buttons">
+    <a href="{{ path('app_game_show_all') }}" class="a-none button">back to list</a>
+</div>
     {{ include('game_crud/_delete_form.html.twig') }}
+    </main>
 {% endblock %}
