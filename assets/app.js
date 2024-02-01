@@ -12,5 +12,6 @@ import './styles/form.css';
 import './styles/switch.css';
 import './styles/frame.css';
 import './styles/team.css';
+import './styles/game.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
