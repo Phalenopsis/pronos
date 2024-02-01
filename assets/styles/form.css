@@ -5,7 +5,7 @@ form {
     justify-content: space-around;
     font-size: var(--form-font-size);
     margin: 5vw;
-    height: 60vh;
+
     @media screen and (width > 576px) {
         margin: 5vw 20vw;
 
@@ -25,6 +25,7 @@ button {
 .error {
     color: red;
     font-size: 2rem;
+    font-weight: bold;
 }
 
 /*.checkbox input[type=checkbox]{*/
