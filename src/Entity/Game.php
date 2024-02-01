@@ -22,7 +22,7 @@ class Game
     private ?Team $team2 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $result = null;
+    private ?int $result = null;
 
     #[ORM\OneToMany(mappedBy: 'game', targetEntity: Forecast::class)]
     private Collection $forecasts;
@@ -61,12 +61,12 @@ class Game
         return $this;
     }
 
-    public function getResult(): ?string
+    public function getResult(): ?int
     {
         return $this->result;
     }
 
-    public function setResult(string $result): static
+    public function setResult(int $result): static
     {
         $this->result = $result;
 

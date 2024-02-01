@@ -9,11 +9,11 @@
             >
                 <p>
                     <span class="
-                    {{ (game.result == '1') ? 'winner' : (game.result == '2') ? 'looser' : 'draw' }} ">
+                    {{ (game.result == 1) ? 'winner' : (game.result == 2) ? 'looser' : 'draw' }} ">
                         {{ game.team1.name }}</span>
                     vs
                     <span class="
-                    {{ (game.result == '2') ? 'winner' : (game.result == '1') ? 'looser' : 'draw' }}">
+                    {{ (game.result == 2) ? 'winner' : (game.result == 1) ? 'looser' : 'draw' }}">
                         {{ game.team2.name }}</span>
                 </p>
             </div>
