@@ -3,24 +3,32 @@
 {% block title %}Game{% endblock %}
 
 {% block body %}
+    <main>
     <h1>Game</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ game.id }}</td>
-            </tr>
-            <tr>
-                <th>Result</th>
-                <td>{{ game.result }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="game-title">
+        <div>{{ game.team1.name }}</div>
+        <div> - </div>
+        <div>{{ game.team2.name }}</div>
+    </div>
 
-    <a href="{{ path('app_game_crud_index') }}">back to list</a>
+    <p>Résultat : {% if game.result %}
+                    {{ game.result }}
+    {% else %}
+    Match non joué
+    {% endif %}</p>
 
-    <a href="{{ path('app_game_crud_edit', {'id': game.id}) }}">edit</a>
+
+<div class="buttons">
+    <a href="{{ path('app_game_show_all') }}" class="a-none">
+        <div class="button">Back to list</div>
+    </a>
+
+    <a href="{{ path('app_game_edit', {'id': game.id}) }}" class="a-none">
+        <div class="button">Update</div>
+    </a>
+</div>
 
     {{ include('game_crud/_delete_form.html.twig') }}
+    </main>
 {% endblock %}
