@@ -1,7 +1,7 @@
 header>nav {
     height: var(--navbar-heigth);
     width: 100vw;
-    background-color: var(--bg-color);
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     padding: var(--svg-padding);
