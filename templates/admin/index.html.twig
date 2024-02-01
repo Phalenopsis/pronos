@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+    <main class="column">
+        <div class="none">
+            {{ include('components/_clip_user.html.twig') }}
+            {{ include('components/_clip_ia.html.twig') }}
+        </div>
+        <div class="frame shadow frame-home"><span class="trans-text">Aaron's matches prediction</span></div>
+
+
+        <a href="{{ path('app_game_new') }}" class="a-none">
+            <div class="frame shadow frame-home">
+                <span class="trans-text">
+                    Add new match
+                </span>
+            </div>
+        </a>
+
+        <a href="{{ path('app_game_show_all') }}" class="a-none">
+            <div class="frame shadow frame-home">
+                <span class="trans-text">
+                    View all match
+                </span>
+            </div>
+        </a>
+
+        <a href="{{ path('app_game_show_all_coming') }}" class="a-none">
+            <div class="frame shadow frame-home">
+                <span class="trans-text">
+                    View all coming match
+                </span>
+            </div>
+        </a>
+    </main>
+{% endblock %}
