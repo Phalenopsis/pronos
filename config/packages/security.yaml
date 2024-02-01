@@ -42,6 +42,8 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        # require ROLE_ADMIN for /admin*
+        - { path: '^/admin', roles: ROLE_ADMIN }
 
 when@test:
     security:
