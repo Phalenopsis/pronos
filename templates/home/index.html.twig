@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Puissance 4²{% endblock %}
+{% block title %}Pronos !{% endblock %}
 
 {% block body %}
     {#    {% if is_granted('ROLE_USER') %}#}
@@ -50,6 +50,18 @@
 {#            <span class="trans-svg ia spaced"></span>#}
         </div>
         </a>
+
+        {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_admin') }}" class="a-none">
+            <div class="frame shadow frame-home">
+                {#            <span class="trans-svg ia r-spaced"></span>#}
+                <span class="trans-text">
+            Administration
+            </span>
+                {#            <span class="trans-svg ia spaced"></span>#}
+            </div>
+        </a>
+        {% endif %}
 
 {#        IT WORKS !!!!#}
 
