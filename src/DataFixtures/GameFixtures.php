@@ -18,7 +18,7 @@ class GameFixtures extends Fixture implements DependentFixtureInterface
     }
     public function load(ObjectManager $manager): void
     {
-        for ($i = 0; $i < 10; $i += 1) {
+        for ($i = 0; $i < 5; $i += 1) {
             $game = new Game();
             $team1Nb = rand(0, 9);
             do{
@@ -27,6 +27,17 @@ class GameFixtures extends Fixture implements DependentFixtureInterface
             $game->setTeam1($this->getReference('team_' . $team1Nb));
             $game->setTeam2($this->getReference('team_' . $team2Nb));
             $game->setResult(rand(0,2));
+            $manager->persist($game);
+            $this->addReference('game_' . $i, $game);
+        }
+        for ($i = 5; $i < 10; $i += 1) {
+            $game = new Game();
+            $team1Nb = rand(0, 9);
+            do{
+                $team2Nb = rand(0,9);
+            } while ($team2Nb === $team1Nb);
+            $game->setTeam1($this->getReference('team_' . $team1Nb));
+            $game->setTeam2($this->getReference('team_' . $team2Nb));
             $manager->persist($game);
             $this->addReference('game_' . $i, $game);
         }
