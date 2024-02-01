@@ -33,6 +33,9 @@ class Team
     #[ORM\OneToMany(mappedBy: 'team2', targetEntity: Game::class)]
     private Collection $movegames;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $slug = null;
+
     public function __construct()
     {
         $this->homegames = new ArrayCollection();
@@ -148,6 +151,18 @@ class Team
                 $movegame->setTeam2(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): static
+    {
+        $this->slug = $slug;
 
         return $this;
     }
