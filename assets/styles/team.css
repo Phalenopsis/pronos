@@ -1,0 +1,7 @@
+.team-colors {
+    display: flex;
+}
+.team-color {
+    width: 5rem;
+    height: 10rem;
+}
