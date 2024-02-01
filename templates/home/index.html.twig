@@ -16,11 +16,9 @@
         {% if not is_granted('ROLE_USER') %}
         <a href="{{ path('app_login_or_register') }}" class="a-none">
             <div class="frame shadow frame-home">
-
                 <span class="trans-text">
                     Connect or Register
                 </span>
-
             </div>
         </a>
         {% endif %}
