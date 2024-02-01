@@ -1,6 +1,6 @@
 :root {
     /* sizes */
-    --navbar-heigth: 5rem;
+    --navbar-heigth: 4rem;
     --svg-padding: 0.5rem;
     --svg-height: calc(var(--navbar-heigth) - calc(var(--svg-padding) * 2));
     --main-height: calc(100svh - var(--navbar-heigth));
