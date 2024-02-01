@@ -7,3 +7,13 @@
 .draw {
     color: rgb(128, 128, 128);
 }
+.game-title {
+    display: flex;
+}
+.game-title div {
+    margin: 1rem;
+}
+#result_result {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
