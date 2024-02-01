@@ -8,7 +8,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Equipe 1</th>
+                <th>Equipe 2</th>
                 <th>Result</th>
                 <th>actions</th>
             </tr>
@@ -16,11 +17,12 @@
         <tbody>
         {% for game in games %}
             <tr>
-                <td>{{ game.id }}</td>
+                <td>{{ game.team1.name }}</td>
+                <td>{{ game.team2.name }}</td>
                 <td>{{ game.result }}</td>
                 <td>
-                    <a href="{{ path('app_game_crud_show', {'id': game.id}) }}">show</a>
-                    <a href="{{ path('app_game_crud_edit', {'id': game.id}) }}">edit</a>
+                    <a href="{{ path('app_game_show', {'id': game.id}) }}">show</a>
+                    <a href="{{ path('app_game_edit', {'id': game.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_game_crud_new') }}">Create new</a>
+    <a href="{{ path('app_game_new') }}">Create new</a>
 {% endblock %}
