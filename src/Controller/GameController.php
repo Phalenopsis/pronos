@@ -17,4 +17,13 @@ class GameController extends AbstractController
             'games' => $games,
         ]);
     }
+
+    #[Route('/nextgames', name: 'app_game_next')]
+    public function nextGames(GameRepository $gameRepository): Response
+    {
+        $games = $gameRepository->findNextGames();
+        return $this->render('game/next.html.twig', [
+            'games' => $games,
+        ]);
+    }
 }
