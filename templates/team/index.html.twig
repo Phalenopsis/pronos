@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les équipes{% endblock %}
+
+{% block body %}
+    <main class="row-wrap">
+        {% for team in teams %}
+        <a href="{{ path('app_team_show', {'team': team.id}) }}" class="a-none">
+            <div class="frame shadow frame-team"
+                     style="--gradient-shadow: radial-gradient(circle, {{ team.color1 }} 0%, {{ team.color2 }} 50%, {{ team.color3 }} 100%);"
+                >
+                <span class="trans-text">
+                {{ team.name }}
+                </span>
+            </div>
+        </a>
+        {% endfor %}
+
+        {#        <div class="frame shadow frame-home"#}
+        {#             style="--gradient-shadow: radial-gradient(circle, rgba(255, 0, 255) 0%, rgba(0, 0, 0) 50%, rgba(255,0, 255,1) 100%);"#}
+        {#        ><span class="trans-text">Hall Of Fame</span></div>#}
+    </main>
+{% endblock %}

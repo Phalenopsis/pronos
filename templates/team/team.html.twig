@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{team.name}}{% endblock %}
+
+{% block body %}
+    <main class="column">
+
+            <div class="frame shadow frame-team"
+                 style="--gradient-shadow: radial-gradient(circle, {{ team.color1 }} 0%, {{ team.color2 }} 50%, {{ team.color3 }} 100%);"
+            >
+                <h1>
+                    <span class="trans-text">
+                        {{ team.name }}
+                    </span>
+                </h1>
+            </div>
+        <div class="team-colors">
+            <div class="team-color" style="background: {{ team.color1 }}"></div>
+            <div class="team-color" style="background: {{ team.color2 }}"></div>
+            <div class="team-color" style="background: {{ team.color3 }}"></div>
+        </div>
+
+
+        {#        <div class="frame shadow frame-home"#}
+        {#             style="--gradient-shadow: radial-gradient(circle, rgba(255, 0, 255) 0%, rgba(0, 0, 0) 50%, rgba(255,0, 255,1) 100%);"#}
+        {#        ><span class="trans-text">Hall Of Fame</span></div>#}
+    </main>
+{% endblock %}
