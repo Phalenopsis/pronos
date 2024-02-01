@@ -5,31 +5,18 @@
 {% block body %}
     <main class="row-wrap">
         {% for game in games %}
-            {#            <a href="{{ path('app_team_show', {'team': team.id}) }}" class="a-none">#}
             <div class="frame shadow frame-team"
-                    {#                     style="--gradient-shadow: radial-gradient(circle, {{ team.color1 }} 0%, {{ team.color2 }} 50%, {{ team.color3 }} 100%);"#}
             >
                 <p>
                     <span class="
                     {{ (game.result == '1') ? 'winner' : (game.result == '2') ? 'looser' : 'draw' }} ">
                         {{ game.team1.name }}</span>
-
                     vs
-
                     <span class="
                     {{ (game.result == '2') ? 'winner' : (game.result == '1') ? 'looser' : 'draw' }}">
                         {{ game.team2.name }}</span>
-
-
                 </p>
-
-
             </div>
-            {#            </a>#}
         {% endfor %}
-
-        {#        <div class="frame shadow frame-home"#}
-        {#             style="--gradient-shadow: radial-gradient(circle, rgba(255, 0, 255) 0%, rgba(0, 0, 0) 50%, rgba(255,0, 255,1) 100%);"#}
-        {#        ><span class="trans-text">Hall Of Fame</span></div>#}
     </main>
 {% endblock %}
