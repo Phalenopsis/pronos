@@ -28,6 +28,7 @@ class GameFixtures extends Fixture implements DependentFixtureInterface
             $game->setTeam2($this->getReference('team_' . $team2Nb));
             $game->setResult(rand(0,2));
             $manager->persist($game);
+            $this->addReference('game_' . $i, $game);
         }
         // $product = new Product();
         // $manager->persist($product);
