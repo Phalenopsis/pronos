@@ -11,6 +11,9 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserFixtures extends Fixture
 {
+    const NAMES = ['Bob', 'toto', 'Tata', 'bidule', 'Pokaaron', 'Jean',
+                    'Pierre', 'Paul', 'Jack', 'Bernardo'];
+
     public function __construct(private UserPasswordHasherInterface $passwordHasher)
     {
     }
@@ -29,6 +32,14 @@ class UserFixtures extends Fixture
         $manager->persist($user);
         // $product = new Product();
         // $manager->persist($product);
+        foreach (self::NAMES as $i => $name) {
+            $user = new User();
+            $user->setUsername($name);
+            $user->setRoles(['ROLE_USER']);
+            $user->setPassword($this->passwordHasher->hashPassword( $user, 'ploplop'));
+            $manager->persist($user);
+            $this->addReference('user_' . $i, $user);
+        }
 
         $manager->flush();
     }
