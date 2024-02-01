@@ -30,6 +30,14 @@ class GameRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findNextGames(): array
+    {
+        return $this->createQueryBuilder('g')
+            ->andWhere('g.result IS NULL')
+            ->orderBy('g.id', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
 //    /**
 //     * @return Game[] Returns an array of Game objects
 //     */
