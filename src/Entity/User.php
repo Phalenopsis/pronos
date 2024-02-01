@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -28,6 +30,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Forecast::class)]
+    private Collection $forecasts;
+
+    public function __construct()
+    {
+        $this->forecasts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -97,5 +107,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection<int, Forecast>
+     */
+    public function getForecasts(): Collection
+    {
+        return $this->forecasts;
+    }
+
+    public function addForecast(Forecast $forecast): static
+    {
+        if (!$this->forecasts->contains($forecast)) {
+            $this->forecasts->add($forecast);
+            $forecast->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeForecast(Forecast $forecast): static
+    {
+        if ($this->forecasts->removeElement($forecast)) {
+            // set the owning side to null (unless already changed)
+            if ($forecast->getUser() === $this) {
+                $forecast->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

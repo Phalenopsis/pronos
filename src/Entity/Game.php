@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GameRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: GameRepository::class)]
@@ -21,6 +23,14 @@ class Game
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $result = null;
+
+    #[ORM\OneToMany(mappedBy: 'game', targetEntity: Forecast::class)]
+    private Collection $forecasts;
+
+    public function __construct()
+    {
+        $this->forecasts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +69,36 @@ class Game
     public function setResult(string $result): static
     {
         $this->result = $result;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Forecast>
+     */
+    public function getForecasts(): Collection
+    {
+        return $this->forecasts;
+    }
+
+    public function addForecast(Forecast $forecast): static
+    {
+        if (!$this->forecasts->contains($forecast)) {
+            $this->forecasts->add($forecast);
+            $forecast->setGame($this);
+        }
+
+        return $this;
+    }
+
+    public function removeForecast(Forecast $forecast): static
+    {
+        if ($this->forecasts->removeElement($forecast)) {
+            // set the owning side to null (unless already changed)
+            if ($forecast->getGame() === $this) {
+                $forecast->setGame(null);
+            }
+        }
 
         return $this;
     }
