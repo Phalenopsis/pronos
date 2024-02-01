@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Derniers matchs joués{% endblock %}
+
+{% block body %}
+    <main class="row-wrap">
+
+        {% if games is empty %}
+            Il n'y a pas de match prévu
+        {% endif %}
+        {% for game in games %}
+            <div class="frame shadow frame-team"
+            >
+
+                <p>
+
+                        {{ game.team1.name }}
+                    vs
+
+                        {{ game.team2.name }}
+                </p>
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}
